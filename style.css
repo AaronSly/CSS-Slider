@@ -241,6 +241,9 @@ img {
 .items-6.autoplay .item {
   animation: galleryAnimation-6 42s infinite;
 }
+/************************************************
+* ANIMATION DELAYS
+************************************************/
 .items-2 .control-button:nth-of-type(1) .square,
 .items-3 .control-button:nth-of-type(1) .square,
 .items-4 .control-button:nth-of-type(1) .square,
