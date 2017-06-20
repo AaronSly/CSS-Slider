@@ -16,20 +16,20 @@ img {
 }
 
 /******************************
-* GALLERY START
+* SLIDER START
 * Adapted from: http://benschwarz.github.io/gallery-css
 ******************************/
-.gallery-wrapper {
+.slider-wrapper {
    position: relative;
    overflow:hidden;   
 }
-.gallery .item:first-of-type {
+.css-slider .slide:first-of-type {
   position: relative;
   pointer-events: auto;
   opacity: 1;
   z-index:6;
 }
-.gallery .item {
+.css-slider .slide {
   position: absolute;
   top: 0;
   left: 0;
@@ -37,38 +37,44 @@ img {
   height: 100%;
   opacity: 0;  
 }
-.gallery .item:nth-of-type(2) {
+.css-slider .slide:nth-of-type(2) {
   z-index:5;
 }
-.gallery .item:nth-of-type(3) {
+.css-slider .slide:nth-of-type(3) {
   z-index:4;
 }
-.gallery .item:nth-of-type(4) {
+.css-slider .slide:nth-of-type(4) {
   z-index:3;
 }
-.gallery .item:nth-of-type(5) {
+.css-slider .slide:nth-of-type(5) {
   z-index:2;
 }
-.gallery .item:nth-of-type(6) {
+.css-slider .slide:nth-of-type(6) {
   z-index:1;
 }
-.gallery .item a {
+.css-slider .slide a {
   cursor: pointer;
 }
-.gallery .control-operator {
+.css-slider .slider-control-op {
   display: none;
 }
-.gallery .control-operator:target ~ .item {
+.css-slider .slider-control-op:target ~ .slide {
   pointer-events: none;
+  -webkit-animation: none;
+  -moz-animation: none;
+  -o-animation: none;
   animation: none;
 }
-.gallery .control-operator:target ~ .controls .control-button .square {
-  animation: none;  
+.css-slider .slider-control-op:target ~ .controls .slider-control-btn .square {
+  -webkit-animation: none;
+  -moz-animation: none;
+  -o-animation: none;
+  animation: none;
 }
 /******************************
-* TWO ITEMS
+* TWO slides
 ******************************/
-@keyframes controlAnimation-2 {
+@-webkit-keyframes sliderControlAnimation-2 {
   0% {
     background: #96968c;
   }
@@ -79,30 +85,147 @@ img {
     background: #96968c;
   }
 }
-@keyframes galleryAnimation-2 {
-   0% {
+@-moz-keyframes sliderControlAnimation-2 {
+  0% {
+    background: #96968c;
+  }
+  14.3%, 50% {
+    background: #70001A;
+  }
+  64.3%, 100% {
+    background: #96968c;
+  }
+}
+@-o-keyframes sliderControlAnimation-2 {
+  0% {
+    background: #96968c;
+  }
+  14.3%, 50% {
+    background: #70001A;
+  }
+  64.3%, 100% {
+    background: #96968c;
+  }
+}
+@keyframes sliderControlAnimation-2 {
+  0% {
+    background: #96968c;
+  }
+  14.3%, 50% {
+    background: #70001A;
+  }
+  64.3%, 100% {
+    background: #96968c;
+  }
+}
+@-webkit-keyframes sliderGalleryAnimation-2 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
     transform: translateX(100%);
     opacity: 1;
   }
   14.3%, 50% {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
     transform: translateX(0%);
     opacity: 1;
   }
   64.3%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
     transform: translateX(-100%);
     opacity: 1;
   }
 }
-.items-2.autoplay .control-button .square{
-  animation: controlAnimation-2 14s infinite;
+@-moz-keyframes sliderGalleryAnimation-2 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  14.3%, 50% {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  64.3%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
 }
-.items-2.autoplay .item {
-  animation: galleryAnimation-2 14s infinite;
+@-o-keyframes sliderGalleryAnimation-2 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  14.3%, 50% {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  64.3%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+@keyframes sliderGalleryAnimation-2 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  14.3%, 50% {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  64.3%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+.slides-2.autoplay .slider-control-btn .square{
+  -webkit-animation: sliderControlAnimation-2 14s infinite;
+  -moz-animation: sliderControlAnimation-2 14s infinite;
+  -o-animation: sliderControlAnimation-2 14s infinite;
+  animation: sliderControlAnimation-2 14s infinite;
+}
+.slides-2.autoplay .slide {
+  -webkit-animation: sliderGalleryAnimation-2 14s infinite;
+  -moz-animation: sliderGalleryAnimation-2 14s infinite;
+  -o-animation: sliderGalleryAnimation-2 14s infinite;
+  animation: sliderGalleryAnimation-2 14s infinite;
 }
 /******************************
-* THREE ITEMS
+* THREE slides
 ******************************/
-@keyframes controlAnimation-3 {
+@-webkit-keyframes sliderControlAnimation-3 {
   0% {
     background: #96968c;
   }
@@ -113,30 +236,147 @@ img {
     background: #96968c;
   }
 }
-@keyframes galleryAnimation-3 {
+@-moz-keyframes sliderControlAnimation-3 {
   0% {
+    background: #96968c;
+  }
+  9.5%, 33.3% {
+    background: #70001A;
+  }
+  42.9%, 100% {
+    background: #96968c;
+  }
+}
+@-o-keyframes sliderControlAnimation-3 {
+  0% {
+    background: #96968c;
+  }
+  9.5%, 33.3% {
+    background: #70001A;
+  }
+  42.9%, 100% {
+    background: #96968c;
+  }
+}
+@keyframes sliderControlAnimation-3 {
+  0% {
+    background: #96968c;
+  }
+  9.5%, 33.3% {
+    background: #70001A;
+  }
+  42.9%, 100% {
+    background: #96968c;
+  }
+}
+@-webkit-keyframes sliderGalleryAnimation-3 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
     transform: translateX(100%);
     opacity: 1;
   }
    9.5%, 33.3% {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
     transform: translateX(0%);
     opacity: 1;
   }
   42.9%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
     transform: translateX(-100%);
     opacity: 1;
   }
 }
-.items-3.autoplay .control-button .square{
-  animation: controlAnimation-3 21s infinite;
+@-moz-keyframes sliderGalleryAnimation-3 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+   9.5%, 33.3% {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  42.9%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
 }
-.items-3.autoplay .item {
-  animation: galleryAnimation-3 21s infinite;
+@-o-keyframes sliderGalleryAnimation-3 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+   9.5%, 33.3% {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  42.9%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+@keyframes sliderGalleryAnimation-3 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+   9.5%, 33.3% {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  42.9%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+.slides-3.autoplay .slider-control-btn .square{
+  -webkit-animation: sliderControlAnimation-3 21s infinite;
+  -moz-animation: sliderControlAnimation-3 21s infinite;
+  -o-animation: sliderControlAnimation-3 21s infinite;
+  animation: sliderControlAnimation-3 21s infinite;
+}
+.slides-3.autoplay .slide {
+  -webkit-animation: sliderGalleryAnimation-3 21s infinite;
+  -moz-animation: sliderGalleryAnimation-3 21s infinite;
+  -o-animation: sliderGalleryAnimation-3 21s infinite;
+  animation: sliderGalleryAnimation-3 21s infinite;
 }
 /******************************
-* FOUR ITEMS
+* FOUR slides
 ******************************/
-@keyframes controlAnimation-4 {
+@-webkit-keyframes sliderControlAnimation-4 {
   0% {
     background: #96968c;
   }
@@ -147,213 +387,576 @@ img {
     background: #96968c;
   }
 }
-@keyframes galleryAnimation-4 {
+@-moz-keyframes sliderControlAnimation-4 {
   0% {
+    background: #96968c;
+  }
+  7.1%, 25% {
+    background: #70001A;
+  }
+  32.1%, 100% {
+    background: #96968c;
+  }
+}
+@-o-keyframes sliderControlAnimation-4 {
+  0% {
+    background: #96968c;
+  }
+  7.1%, 25% {
+    background: #70001A;
+  }
+  32.1%, 100% {
+    background: #96968c;
+  }
+}
+@keyframes sliderControlAnimation-4 {
+  0% {
+    background: #96968c;
+  }
+  7.1%, 25% {
+    background: #70001A;
+  }
+  32.1%, 100% {
+    background: #96968c;
+  }
+}
+@-webkit-keyframes sliderGalleryAnimation-4 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
     transform: translateX(100%);
     opacity: 1;
   }
   7.1%, 25%  {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
     transform: translateX(0%);
     opacity: 1;
   }
   32.1%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
     transform: translateX(-100%);
     opacity: 1;
   }
 }
-.items-4.autoplay .control-button .square{
-  animation: controlAnimation-4 28s infinite;
-}
-.items-4.autoplay .item {
-  animation: galleryAnimation-4 28s infinite;
-}
-/******************************
-* FIVE ITEMS
-******************************/
-@keyframes controlAnimation-5 {
+@-moz-keyframes sliderGalleryAnimation-4 {
   0% {
-    background: #96968c;
-  }
-  5.7%,
-  20% {
-    background: #70001A;
-  }
-  25.7%,
-  100% {
-    background: #96968c;
-  }
-}
-@keyframes galleryAnimation-5 {
-  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
     transform: translateX(100%);
     opacity: 1;
   }
-  5.7%,
-  20% {
+  7.1%, 25%  {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
     transform: translateX(0%);
     opacity: 1;
   }
-  25.7%,
-  100% {
+  32.1%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
     transform: translateX(-100%);
     opacity: 1;
   }
 }
-.items-5.autoplay .control-button .square{
-  animation: controlAnimation-5 35s infinite;
+@-o-keyframes sliderGalleryAnimation-4 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  7.1%, 25%  {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  32.1%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
 }
-.items-5.autoplay .item {
-  animation: galleryAnimation-5 35s infinite;
+@keyframes sliderGalleryAnimation-4 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  7.1%, 25%  {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  32.1%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+.slides-4.autoplay .slider-control-btn .square{
+  -webkit-animation: sliderControlAnimation-4 28s infinite;
+  -moz-animation: sliderControlAnimation-4 28s infinite;
+  -o-animation: sliderControlAnimation-4 28s infinite;
+  animation: sliderControlAnimation-4 28s infinite;
+}
+.slides-4.autoplay .slide {
+  -webkit-animation: sliderGalleryAnimation-4 28s infinite;
+  -moz-animation: sliderGalleryAnimation-4 28s infinite;
+  -o-animation: sliderGalleryAnimation-4 28s infinite;
+  animation: sliderGalleryAnimation-4 28s infinite;
 }
 /******************************
-* SIX ITEMS
+* FIVE slides
 ******************************/
-@keyframes controlAnimation-6 {
+@-webkit-keyframes sliderControlAnimation-5 {
+  0% {
+    background: #96968c;
+  }
+  5.7%, 20% {
+    background: #70001A;
+  }
+  25.7%, 100% {
+    background: #96968c;
+  }
+}
+@-moz-keyframes sliderControlAnimation-5 {
+  0% {
+    background: #96968c;
+  }
+  5.7%, 20% {
+    background: #70001A;
+  }
+  25.7%, 100% {
+    background: #96968c;
+  }
+}
+@-o-keyframes sliderControlAnimation-5 {
+  0% {
+    background: #96968c;
+  }
+  5.7%, 20% {
+    background: #70001A;
+  }
+  25.7%, 100% {
+    background: #96968c;
+  }
+}
+@keyframes sliderControlAnimation-5 {
+  0% {
+    background: #96968c;
+  }
+  5.7%, 20% {
+    background: #70001A;
+  }
+  25.7%, 100% {
+    background: #96968c;
+  }
+}
+@-webkit-keyframes sliderGalleryAnimation-5 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  5.7%, 20% {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  25.7%, 100% {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+@-moz-keyframes sliderGalleryAnimation-5 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  5.7%, 20% {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  25.7%, 100% {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+@-o-keyframes sliderGalleryAnimation-5 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  5.7%, 20% {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  25.7%, 100% {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+@keyframes sliderGalleryAnimation-5 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  5.7%, 20% {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  25.7%, 100% {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+.slides-5.autoplay .slider-control-btn .square{
+  -webkit-animation: sliderControlAnimation-5 35s infinite;
+  -moz-animation: sliderControlAnimation-5 35s infinite;
+  -o-animation: sliderControlAnimation-5 35s infinite;
+  animation: sliderControlAnimation-5 35s infinite;
+}
+.slides-5.autoplay .slide {
+  -webkit-animation: sliderGalleryAnimation-5 35s infinite;
+  -moz-animation: sliderGalleryAnimation-5 35s infinite;
+  -o-animation: sliderGalleryAnimation-5 35s infinite;
+  animation: sliderGalleryAnimation-5 35s infinite;
+}
+/******************************
+* SIX slides
+******************************/
+@-webkit-keyframes sliderControlAnimation-6 {
   0% {
     background: #96968c;
   }
   4.8%,16.66% {
     background: #70001A;
   }
-  21.5%,
-  100% {
+  21.5%, 100% {
     background: #96968c;
   }
 }
-@keyframes galleryAnimation-6 {
-    0% {
+@-moz-keyframes sliderControlAnimation-6 {
+  0% {
+    background: #96968c;
+  }
+  4.8%,16.66% {
+    background: #70001A;
+  }
+  21.5%, 100% {
+    background: #96968c;
+  }
+}
+@-o-keyframes sliderControlAnimation-6 {
+  0% {
+    background: #96968c;
+  }
+  4.8%,16.66% {
+    background: #70001A;
+  }
+  21.5%, 100% {
+    background: #96968c;
+  }
+}
+@keyframes sliderControlAnimation-6 {
+  0% {
+    background: #96968c;
+  }
+  4.8%,16.66% {
+    background: #70001A;
+  }
+  21.5%, 100% {
+    background: #96968c;
+  }
+}
+@-webkit-keyframes sliderGalleryAnimation-6 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
     transform: translateX(100%);
     opacity: 1;
   }
   4.8%,16.66%  {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
     transform: translateX(0%);
     opacity: 1;
   }
-  21.5%, 
-  100%  {
+  21.5%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
     transform: translateX(-100%);
     opacity: 1;
   }
 }
-.items-6.autoplay .control-button .square{
-  animation: controlAnimation-6 42s infinite;
+@-moz-keyframes sliderGalleryAnimation-6 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  4.8%,16.66%  {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  21.5%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
 }
-.items-6.autoplay .item {
-  animation: galleryAnimation-6 42s infinite;
+@-o-keyframes sliderGalleryAnimation-6 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  4.8%,16.66%  {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  21.5%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+@keyframes sliderGalleryAnimation-6 {
+  0% {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  4.8%,16.66%  {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  21.5%, 100%  {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+.slides-6.autoplay .slider-control-btn .square{
+  -webkit-animation: sliderControlAnimation-6 42s infinite;
+  -moz-animation: sliderControlAnimation-6 42s infinite;
+  -o-animation: sliderControlAnimation-6 42s infinite;
+  animation: sliderControlAnimation-6 42s infinite;
+}
+.slides-6.autoplay .slide {
+  -webkit-animation: sliderGalleryAnimation-6 42s infinite;
+  -moz-animation: sliderGalleryAnimation-6 42s infinite;
+  -o-animation: sliderGalleryAnimation-6 42s infinite;
+  animation: sliderGalleryAnimation-6 42s infinite;
 }
 /************************************************
 * ANIMATION DELAYS
 ************************************************/
-.items-2 .control-button:nth-of-type(1) .square,
-.items-3 .control-button:nth-of-type(1) .square,
-.items-4 .control-button:nth-of-type(1) .square,
-.items-5 .control-button:nth-of-type(1) .square,
-.items-6 .control-button:nth-of-type(1) .square,
-.items-2 .item:nth-of-type(1),
-.items-3 .item:nth-of-type(1),
-.items-4 .item:nth-of-type(1),
-.items-5 .item:nth-of-type(1),
-.items-6 .item:nth-of-type(1) {
+.slides-2 .slider-control-btn:nth-of-type(1) .square,
+.slides-3 .slider-control-btn:nth-of-type(1) .square,
+.slides-4 .slider-control-btn:nth-of-type(1) .square,
+.slides-5 .slider-control-btn:nth-of-type(1) .square,
+.slides-6 .slider-control-btn:nth-of-type(1) .square,
+.slides-2 .slide:nth-of-type(1),
+.slides-3 .slide:nth-of-type(1),
+.slides-4 .slide:nth-of-type(1),
+.slides-5 .slide:nth-of-type(1),
+.slides-6 .slide:nth-of-type(1) {
+  -webkit-animation-delay: -2s;
+  -moz-animation-delay: -2s;
+  -o-animation-delay: -2s;
   animation-delay: -2s;
 }
-.items-2 .control-button:nth-of-type(2) .square,
-.items-3 .control-button:nth-of-type(2) .square,
-.items-4 .control-button:nth-of-type(2) .square,
-.items-5 .control-button:nth-of-type(2) .square,
-.items-6 .control-button:nth-of-type(2) .square,
-.items-2 .item:nth-of-type(2),
-.items-3 .item:nth-of-type(2),
-.items-4 .item:nth-of-type(2),
-.items-5 .item:nth-of-type(2),
-.items-6 .item:nth-of-type(2) {
+.slides-2 .slider-control-btn:nth-of-type(2) .square,
+.slides-3 .slider-control-btn:nth-of-type(2) .square,
+.slides-4 .slider-control-btn:nth-of-type(2) .square,
+.slides-5 .slider-control-btn:nth-of-type(2) .square,
+.slides-6 .slider-control-btn:nth-of-type(2) .square,
+.slides-2 .slide:nth-of-type(2),
+.slides-3 .slide:nth-of-type(2),
+.slides-4 .slide:nth-of-type(2),
+.slides-5 .slide:nth-of-type(2),
+.slides-6 .slide:nth-of-type(2) {
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
   animation-delay: 5s;
 }
-.items-3 .control-button:nth-of-type(3) .square,
-.items-4 .control-button:nth-of-type(3) .square,
-.items-5 .control-button:nth-of-type(3) .square,
-.items-6 .control-button:nth-of-type(3) .square,
-.items-3 .item:nth-of-type(3),
-.items-4 .item:nth-of-type(3),
-.items-5 .item:nth-of-type(3),
-.items-6 .item:nth-of-type(3) {
+.slides-3 .slider-control-btn:nth-of-type(3) .square,
+.slides-4 .slider-control-btn:nth-of-type(3) .square,
+.slides-5 .slider-control-btn:nth-of-type(3) .square,
+.slides-6 .slider-control-btn:nth-of-type(3) .square,
+.slides-3 .slide:nth-of-type(3),
+.slides-4 .slide:nth-of-type(3),
+.slides-5 .slide:nth-of-type(3),
+.slides-6 .slide:nth-of-type(3) {
+  -webkit-animation-delay: 12s;
+  -moz-animation-delay: 12s;
+  -o-animation-delay: 12s;
   animation-delay: 12s;
 }
-.items-4 .control-button:nth-of-type(4) .square,
-.items-5 .control-button:nth-of-type(4) .square,
-.items-6 .control-button:nth-of-type(4) .square,
-.items-4 .item:nth-of-type(4),
-.items-5 .item:nth-of-type(4),
-.items-6 .item:nth-of-type(4) {
+.slides-4 .slider-control-btn:nth-of-type(4) .square,
+.slides-5 .slider-control-btn:nth-of-type(4) .square,
+.slides-6 .slider-control-btn:nth-of-type(4) .square,
+.slides-4 .slide:nth-of-type(4),
+.slides-5 .slide:nth-of-type(4),
+.slides-6 .slide:nth-of-type(4) {
+  -webkit-animation-delay: 19s;
+  -moz-animation-delay: 19s;
+  -o-animation-delay: 19s;
   animation-delay: 19s;
 }
-.items-5 .control-button:nth-of-type(5) .square,
-.items-6 .control-button:nth-of-type(5) .square,
-.items-5 .item:nth-of-type(5),
-.items-6 .item:nth-of-type(5) {
+.slides-5 .slider-control-btn:nth-of-type(5) .square,
+.slides-6 .slider-control-btn:nth-of-type(5) .square,
+.slides-5 .slide:nth-of-type(5),
+.slides-6 .slide:nth-of-type(5) {
+  -webkit-animation-delay: 26s;
+  -moz-animation-delay: 26s;
+  -o-animation-delay: 26s;
   animation-delay: 26s;
 }
-.items-6 .control-button:nth-of-type(6) .square,
-.items-6 .item:nth-of-type(6) {
+.slides-6 .slider-control-btn:nth-of-type(6) .square,
+.slides-6 .slide:nth-of-type(6) {
+  -webkit-animation-delay: 33s;
+  -moz-animation-delay: 33s;
+  -o-animation-delay: 33s;
   animation-delay: 33s;  
 }
 /***********************************
-* GALLERY CONTROL ONCLICK STYLES
+* SLIDER CONTROL ONCLICK STYLES
 ************************************/
-.gallery .control-operator:nth-of-type(1):target ~ .item:nth-of-type(1),
-.gallery .control-operator:nth-of-type(2):target ~ .item:nth-of-type(2),
-.gallery .control-operator:nth-of-type(3):target ~ .item:nth-of-type(3),
-.gallery .control-operator:nth-of-type(4):target ~ .item:nth-of-type(4),
-.gallery .control-operator:nth-of-type(5):target ~ .item:nth-of-type(5),
-.gallery .control-operator:nth-of-type(6):target ~ .item:nth-of-type(6) {
+.css-slider .slider-control-op:nth-of-type(1):target ~ .slide:nth-of-type(1),
+.css-slider .slider-control-op:nth-of-type(2):target ~ .slide:nth-of-type(2),
+.css-slider .slider-control-op:nth-of-type(3):target ~ .slide:nth-of-type(3),
+.css-slider .slider-control-op:nth-of-type(4):target ~ .slide:nth-of-type(4),
+.css-slider .slider-control-op:nth-of-type(5):target ~ .slide:nth-of-type(5),
+.css-slider .slider-control-op:nth-of-type(6):target ~ .slide:nth-of-type(6) {
   pointer-events: auto;
   opacity: 1;
   -webkit-transition: opacity 1s;
   -o-transition: opacity 1s;
   transition: opacity 1s;
 }
-.gallery .control-operator:nth-of-type(1):target ~ .item,
-.gallery .control-operator:nth-of-type(2):target ~ .item,
-.gallery .control-operator:nth-of-type(3):target ~ .item,
-.gallery .control-operator:nth-of-type(4):target ~ .item,
-.gallery .control-operator:nth-of-type(5):target ~ .item,
-.gallery .control-operator:nth-of-type(6):target ~ .item {
+.css-slider .slider-control-op:nth-of-type(1):target ~ .slide,
+.css-slider .slider-control-op:nth-of-type(2):target ~ .slide,
+.css-slider .slider-control-op:nth-of-type(3):target ~ .slide,
+.css-slider .slider-control-op:nth-of-type(4):target ~ .slide,
+.css-slider .slider-control-op:nth-of-type(5):target ~ .slide,
+.css-slider .slider-control-op:nth-of-type(6):target ~ .slide {
   opacity: 0;
   -webkit-transition: opacity 1s;
   -o-transition: opacity 1s;
   transition: opacity 1s;
 }
-.gallery .control-operator:nth-of-type(1):target ~ .controls .control-button:nth-of-type(1) .square,
-.gallery .control-operator:nth-of-type(2):target ~ .controls .control-button:nth-of-type(2) .square,
-.gallery .control-operator:nth-of-type(3):target ~ .controls .control-button:nth-of-type(3) .square,
-.gallery .control-operator:nth-of-type(4):target ~ .controls .control-button:nth-of-type(4) .square,
-.gallery .control-operator:nth-of-type(5):target ~ .controls .control-button:nth-of-type(5) .square,
-.gallery .control-operator:nth-of-type(6):target ~ .controls .control-button:nth-of-type(6) .square {
+.css-slider .slider-control-op:nth-of-type(1):target ~ .controls .slider-control-btn:nth-of-type(1) .square,
+.css-slider .slider-control-op:nth-of-type(2):target ~ .controls .slider-control-btn:nth-of-type(2) .square,
+.css-slider .slider-control-op:nth-of-type(3):target ~ .controls .slider-control-btn:nth-of-type(3) .square,
+.css-slider .slider-control-op:nth-of-type(4):target ~ .controls .slider-control-btn:nth-of-type(4) .square,
+.css-slider .slider-control-op:nth-of-type(5):target ~ .controls .slider-control-btn:nth-of-type(5) .square,
+.css-slider .slider-control-op:nth-of-type(6):target ~ .controls .slider-control-btn:nth-of-type(6) .square {
   background: #70001A;
   -webkit-transition: background .5s;
   -o-transition: background .5s;
   transition: background .5s;
 }
 /*
-	Theme controls how everything looks in Gallery CSS.
+	Theme controls how everything looks in SLIDER CSS.
 */
-.gallery {
+.css-slider {
   position: relative;
   overflow:hidden;
 }
-.gallery .item {
+.css-slider .slide {
   overflow: hidden;
   text-align: center;
 }
-.gallery .item p {
+.css-slider .slide p {
 	margin-bottom:0;
 }
-.gallery .controls {
+.css-slider .controls {
   position: absolute;
   bottom: 10px; 
   right: 10px;  
   z-index: 15;
 }
-.gallery .control-button {
+.css-slider .slider-control-btn {
   display: inline-block;
   margin: 0 .02em;
   font-size: 3em;
