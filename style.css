@@ -972,3 +972,40 @@ img {
   -o-transition: background .1s;
   transition: background .1s;
 }
+
+.slider-nav-btn-prev,.slider-nav-btn-next {
+    width: 45px;
+    height: 45px;
+    margin: -20px 0 0;
+    display: block;
+    background: url(https://www.theheatingboutique.co.uk/skin/frontend/default/heating/magentothem/images/btn-slideshow.png) no-repeat 0 0;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    text-indent: -9999px;
+    opacity: 1;    
+}
+
+.slide .slider-nav-btn-next {
+    background-position: 100% 0;
+    right: -45px;
+    right:10px;
+    -webkit-transition: right .6s;
+    -o-transition: right .6s;
+    transition: right .6s;
+}
+
+.slide .slider-nav-btn-prev {
+  left:-45px;
+  left:10px;
+  -webkit-transition: left .6s;
+  -o-transition: left .6s;
+  transition: left .6s;
+}
+
+.slider-nav-btn-next:hover {
+  background-position: 100% 100%;
+}
+.slider-nav-btn-prev:hover {
+  background-position: 0 100%;  
+}
